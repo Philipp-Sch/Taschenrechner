@@ -1,6 +1,6 @@
 ﻿namespace Taschenrechner
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,29 +43,35 @@
             this.subtraktionButton = new System.Windows.Forms.Button();
             this.additionButton = new System.Windows.Forms.Button();
             this.kommaButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gleichButton = new System.Windows.Forms.Button();
+            this.klammerAufButton = new System.Windows.Forms.Button();
+            this.klammerZuButton = new System.Windows.Forms.Button();
+            this.löschenButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // siebenButton
             // 
-            this.siebenButton.Location = new System.Drawing.Point(12, 169);
+            this.siebenButton.Location = new System.Drawing.Point(12, 151);
             this.siebenButton.Name = "siebenButton";
             this.siebenButton.Size = new System.Drawing.Size(60, 60);
-            this.siebenButton.TabIndex = 0;
+            this.siebenButton.TabIndex = 4;
             this.siebenButton.Text = "7";
             this.siebenButton.UseVisualStyleBackColor = true;
             // 
             // achtButton
             // 
-            this.achtButton.Location = new System.Drawing.Point(78, 169);
+            this.achtButton.Location = new System.Drawing.Point(78, 151);
             this.achtButton.Name = "achtButton";
             this.achtButton.Size = new System.Drawing.Size(60, 60);
-            this.achtButton.TabIndex = 1;
+            this.achtButton.TabIndex = 3;
             this.achtButton.Text = "8";
             this.achtButton.UseVisualStyleBackColor = true;
             // 
             // neunButton
             // 
-            this.neunButton.Location = new System.Drawing.Point(144, 169);
+            this.neunButton.Location = new System.Drawing.Point(144, 151);
             this.neunButton.Name = "neunButton";
             this.neunButton.Size = new System.Drawing.Size(60, 60);
             this.neunButton.TabIndex = 2;
@@ -74,25 +80,25 @@
             // 
             // vierButton
             // 
-            this.vierButton.Location = new System.Drawing.Point(12, 235);
+            this.vierButton.Location = new System.Drawing.Point(12, 217);
             this.vierButton.Name = "vierButton";
             this.vierButton.Size = new System.Drawing.Size(60, 60);
-            this.vierButton.TabIndex = 3;
+            this.vierButton.TabIndex = 7;
             this.vierButton.Text = "4";
             this.vierButton.UseVisualStyleBackColor = true;
             // 
             // fünfButton
             // 
-            this.fünfButton.Location = new System.Drawing.Point(78, 235);
+            this.fünfButton.Location = new System.Drawing.Point(78, 217);
             this.fünfButton.Name = "fünfButton";
             this.fünfButton.Size = new System.Drawing.Size(60, 60);
-            this.fünfButton.TabIndex = 4;
+            this.fünfButton.TabIndex = 6;
             this.fünfButton.Text = "5";
             this.fünfButton.UseVisualStyleBackColor = true;
             // 
             // sechsButton
             // 
-            this.sechsButton.Location = new System.Drawing.Point(144, 235);
+            this.sechsButton.Location = new System.Drawing.Point(144, 217);
             this.sechsButton.Name = "sechsButton";
             this.sechsButton.Size = new System.Drawing.Size(60, 60);
             this.sechsButton.TabIndex = 5;
@@ -101,25 +107,25 @@
             // 
             // einsButton
             // 
-            this.einsButton.Location = new System.Drawing.Point(12, 301);
+            this.einsButton.Location = new System.Drawing.Point(12, 283);
             this.einsButton.Name = "einsButton";
             this.einsButton.Size = new System.Drawing.Size(60, 60);
-            this.einsButton.TabIndex = 6;
+            this.einsButton.TabIndex = 10;
             this.einsButton.Text = "1";
             this.einsButton.UseVisualStyleBackColor = true;
             // 
             // zweiButton
             // 
-            this.zweiButton.Location = new System.Drawing.Point(78, 301);
+            this.zweiButton.Location = new System.Drawing.Point(78, 283);
             this.zweiButton.Name = "zweiButton";
             this.zweiButton.Size = new System.Drawing.Size(60, 60);
-            this.zweiButton.TabIndex = 7;
+            this.zweiButton.TabIndex = 9;
             this.zweiButton.Text = "2";
             this.zweiButton.UseVisualStyleBackColor = true;
             // 
             // dreiButton
             // 
-            this.dreiButton.Location = new System.Drawing.Point(144, 301);
+            this.dreiButton.Location = new System.Drawing.Point(144, 283);
             this.dreiButton.Name = "dreiButton";
             this.dreiButton.Size = new System.Drawing.Size(60, 60);
             this.dreiButton.TabIndex = 8;
@@ -128,63 +134,126 @@
             // 
             // nullButton
             // 
-            this.nullButton.Location = new System.Drawing.Point(78, 367);
+            this.nullButton.Location = new System.Drawing.Point(78, 349);
             this.nullButton.Name = "nullButton";
             this.nullButton.Size = new System.Drawing.Size(60, 60);
-            this.nullButton.TabIndex = 9;
+            this.nullButton.TabIndex = 11;
             this.nullButton.Text = "0";
             this.nullButton.UseVisualStyleBackColor = true;
             // 
             // divisionButton
             // 
-            this.divisionButton.Location = new System.Drawing.Point(234, 169);
+            this.divisionButton.Location = new System.Drawing.Point(238, 151);
             this.divisionButton.Name = "divisionButton";
             this.divisionButton.Size = new System.Drawing.Size(93, 60);
-            this.divisionButton.TabIndex = 10;
+            this.divisionButton.TabIndex = 14;
             this.divisionButton.Text = "/";
             this.divisionButton.UseVisualStyleBackColor = true;
             // 
             // multiplikationButton
             // 
-            this.multiplikationButton.Location = new System.Drawing.Point(234, 235);
+            this.multiplikationButton.Location = new System.Drawing.Point(238, 217);
             this.multiplikationButton.Name = "multiplikationButton";
             this.multiplikationButton.Size = new System.Drawing.Size(93, 60);
-            this.multiplikationButton.TabIndex = 11;
+            this.multiplikationButton.TabIndex = 16;
             this.multiplikationButton.Text = "x";
             this.multiplikationButton.UseVisualStyleBackColor = true;
             // 
             // subtraktionButton
             // 
-            this.subtraktionButton.Location = new System.Drawing.Point(234, 301);
+            this.subtraktionButton.Location = new System.Drawing.Point(337, 151);
             this.subtraktionButton.Name = "subtraktionButton";
             this.subtraktionButton.Size = new System.Drawing.Size(93, 60);
-            this.subtraktionButton.TabIndex = 12;
+            this.subtraktionButton.TabIndex = 15;
             this.subtraktionButton.Text = "-";
             this.subtraktionButton.UseVisualStyleBackColor = true;
             // 
             // additionButton
             // 
-            this.additionButton.Location = new System.Drawing.Point(234, 367);
+            this.additionButton.Location = new System.Drawing.Point(337, 217);
             this.additionButton.Name = "additionButton";
             this.additionButton.Size = new System.Drawing.Size(93, 60);
-            this.additionButton.TabIndex = 13;
+            this.additionButton.TabIndex = 17;
             this.additionButton.Text = "+";
             this.additionButton.UseVisualStyleBackColor = true;
             // 
             // kommaButton
             // 
-            this.kommaButton.Location = new System.Drawing.Point(144, 367);
+            this.kommaButton.Location = new System.Drawing.Point(12, 349);
             this.kommaButton.Name = "kommaButton";
             this.kommaButton.Size = new System.Drawing.Size(60, 60);
-            this.kommaButton.TabIndex = 14;
+            this.kommaButton.TabIndex = 12;
             this.kommaButton.Text = ",";
             this.kommaButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 13);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(414, 89);
+            this.textBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 115);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(414, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "0";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gleichButton
+            // 
+            this.gleichButton.Location = new System.Drawing.Point(238, 349);
+            this.gleichButton.Name = "gleichButton";
+            this.gleichButton.Size = new System.Drawing.Size(192, 60);
+            this.gleichButton.TabIndex = 20;
+            this.gleichButton.Text = "=";
+            this.gleichButton.UseVisualStyleBackColor = true;
+            // 
+            // klammerAufButton
+            // 
+            this.klammerAufButton.Location = new System.Drawing.Point(238, 283);
+            this.klammerAufButton.Name = "klammerAufButton";
+            this.klammerAufButton.Size = new System.Drawing.Size(93, 60);
+            this.klammerAufButton.TabIndex = 18;
+            this.klammerAufButton.Text = "(";
+            this.klammerAufButton.UseVisualStyleBackColor = true;
+            // 
+            // klammerZuButton
+            // 
+            this.klammerZuButton.Location = new System.Drawing.Point(337, 283);
+            this.klammerZuButton.Name = "klammerZuButton";
+            this.klammerZuButton.Size = new System.Drawing.Size(93, 60);
+            this.klammerZuButton.TabIndex = 19;
+            this.klammerZuButton.Text = ")";
+            this.klammerZuButton.UseVisualStyleBackColor = true;
+            // 
+            // löschenButton
+            // 
+            this.löschenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.löschenButton.Location = new System.Drawing.Point(144, 349);
+            this.löschenButton.Name = "löschenButton";
+            this.löschenButton.Size = new System.Drawing.Size(60, 60);
+            this.löschenButton.TabIndex = 13;
+            this.löschenButton.Text = "☜";
+            this.löschenButton.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 529);
+            this.ClientSize = new System.Drawing.Size(446, 424);
+            this.Controls.Add(this.löschenButton);
+            this.Controls.Add(this.klammerZuButton);
+            this.Controls.Add(this.klammerAufButton);
+            this.Controls.Add(this.gleichButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.kommaButton);
             this.Controls.Add(this.additionButton);
             this.Controls.Add(this.subtraktionButton);
@@ -200,9 +269,12 @@
             this.Controls.Add(this.neunButton);
             this.Controls.Add(this.achtButton);
             this.Controls.Add(this.siebenButton);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
             this.Text = "Taschenrechner";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -223,6 +295,12 @@
         private System.Windows.Forms.Button subtraktionButton;
         private System.Windows.Forms.Button additionButton;
         private System.Windows.Forms.Button kommaButton;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button gleichButton;
+        private System.Windows.Forms.Button klammerAufButton;
+        private System.Windows.Forms.Button klammerZuButton;
+        private System.Windows.Forms.Button löschenButton;
     }
 }
 
