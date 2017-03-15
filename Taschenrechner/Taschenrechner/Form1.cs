@@ -15,6 +15,7 @@ namespace Taschenrechner
         public MainForm()
         {
             InitializeComponent();
+            //Das sist ein toller Kommentar
         }
     }
 }
