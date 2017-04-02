@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.deleteButton = new System.Windows.Forms.Button();
             this.allClearButton = new System.Windows.Forms.Button();
             this.offButton = new System.Windows.Forms.Button();
@@ -325,6 +326,7 @@
             this.Controls.Add(this.deleteButton);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Taschenrechner";
             this.TopMost = true;
