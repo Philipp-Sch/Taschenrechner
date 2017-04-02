@@ -13,6 +13,7 @@ namespace Taschenrechner
     public partial class MainForm : Form
     {
         private int operation, firstSign, secondSign;
+        private List<double> result;
 
         public MainForm()
         {
@@ -21,6 +22,8 @@ namespace Taschenrechner
             operation = 0;
             firstSign = 0;
             secondSign = 0;
+            //
+            result = new List<double>();
         }
 
         private void offButtonClick(object sender, EventArgs e)
@@ -82,7 +85,7 @@ namespace Taschenrechner
 
         private void addButtonClick(object sender, EventArgs e)
         {
-            if (firstSign == 0)
+            if (string.IsNullOrEmpty(calculationTextBox.Text) && firstSign == 0)
             {
                 firstSign = 1;
                 calculationTextBox.Text += "+";
@@ -92,7 +95,7 @@ namespace Taschenrechner
                 operation = 1;
                 calculationTextBox.Text += "+";
             }
-            else if (secondSign == 0)
+            else if (secondSign == 0 && "+-*/".Contains(Convert.ToString(calculationTextBox.Text[calculationTextBox.Text.Length - 1])))
             {
                 secondSign = 1;
                 calculationTextBox.Text += "+";
@@ -101,7 +104,7 @@ namespace Taschenrechner
 
         private void subtractButtonClick(object sender, EventArgs e)
         {
-            if (firstSign == 0)
+            if (string.IsNullOrEmpty(calculationTextBox.Text) && firstSign == 0)
             {
                 firstSign = 2;
                 calculationTextBox.Text += "-";
@@ -111,21 +114,20 @@ namespace Taschenrechner
                 operation = 2;
                 calculationTextBox.Text += "-";
             }
-            else if (secondSign == 0)
+            else if (secondSign == 0 && "+-*/".Contains(Convert.ToString(calculationTextBox.Text[calculationTextBox.Text.Length - 1])))
             {
                 secondSign = 2;
                 calculationTextBox.Text += "-";
             }
         }
 
-        private void calculationTextBoxTextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void deleteButtonClick(object sender, EventArgs e)
         {
-            if (secondSign != 0)
+            if (calculationTextBox.Text.Length > 0 && "0123456789".Contains(Convert.ToString(calculationTextBox.Text[calculationTextBox.Text.Length - 1])))
+            {
+                calculationTextBox.Text = calculationTextBox.Text.Remove(calculationTextBox.Text.Length - 1, 1);
+            }
+            else if (secondSign != 0)
             {
                 switch (calculationTextBox.Text[calculationTextBox.Text.Length - 1])
                 {
@@ -177,6 +179,26 @@ namespace Taschenrechner
             }
         }
 
+        private void allClearButtonClick(object sender, EventArgs e)
+        {
+            calculationTextBox.Text = "";
+            firstSign = 0;
+            operation = 0;
+            secondSign = 0;
+        }
+
+        private void equalsButtonClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void calculationTextBoxTextChanged(object sender, EventArgs e)
+        {
+            resultsListBox.Items.Add(firstSign);
+            resultsListBox.Items.Add(operation);
+            resultsListBox.Items.Add(secondSign);
+        }
+
         private void multiplyButtonClick(object sender, EventArgs e)
         {
             if (operation == 0)
@@ -187,7 +209,7 @@ namespace Taschenrechner
         }
 
         private void divideButtonClick(object sender, EventArgs e)
-        {
+            {
             if (operation == 0)
             {
                 operation = 4;

@@ -47,6 +47,7 @@
             this.equalsButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.calculationTextBox = new System.Windows.Forms.TextBox();
+            this.resultsListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // deleteButton
@@ -73,6 +74,7 @@
             this.allClearButton.TabStop = false;
             this.allClearButton.Text = "AC";
             this.allClearButton.UseVisualStyleBackColor = true;
+            this.allClearButton.Click += new System.EventHandler(this.allClearButtonClick);
             // 
             // offButton
             // 
@@ -253,6 +255,7 @@
             this.equalsButton.TabIndex = 14;
             this.equalsButton.Text = "=";
             this.equalsButton.UseVisualStyleBackColor = true;
+            this.equalsButton.Click += new System.EventHandler(this.equalsButtonClick);
             // 
             // addButton
             // 
@@ -272,7 +275,7 @@
             this.calculationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.calculationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculationTextBox.ForeColor = System.Drawing.Color.White;
-            this.calculationTextBox.Location = new System.Drawing.Point(12, 12);
+            this.calculationTextBox.Location = new System.Drawing.Point(12, 9);
             this.calculationTextBox.Name = "calculationTextBox";
             this.calculationTextBox.ReadOnly = true;
             this.calculationTextBox.Size = new System.Drawing.Size(177, 33);
@@ -280,13 +283,28 @@
             this.calculationTextBox.TabStop = false;
             this.calculationTextBox.TextChanged += new System.EventHandler(this.calculationTextBoxTextChanged);
             // 
+            // resultsListBox
+            // 
+            this.resultsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.resultsListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.resultsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultsListBox.ForeColor = System.Drawing.Color.White;
+            this.resultsListBox.FormattingEnabled = true;
+            this.resultsListBox.ItemHeight = 15;
+            this.resultsListBox.Location = new System.Drawing.Point(207, 9);
+            this.resultsListBox.Name = "resultsListBox";
+            this.resultsListBox.Size = new System.Drawing.Size(201, 227);
+            this.resultsListBox.TabIndex = 0;
+            this.resultsListBox.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(201, 248);
+            this.ClientSize = new System.Drawing.Size(420, 248);
             this.ControlBox = false;
+            this.Controls.Add(this.resultsListBox);
             this.Controls.Add(this.calculationTextBox);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.equalsButton);
@@ -337,6 +355,7 @@
         private System.Windows.Forms.Button equalsButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.TextBox calculationTextBox;
+        private System.Windows.Forms.ListBox resultsListBox;
     }
 }
 
