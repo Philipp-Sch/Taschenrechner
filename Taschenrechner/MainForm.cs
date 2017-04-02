@@ -191,73 +191,84 @@ namespace Taschenrechner
 
         private void equalsButtonClick(object sender, EventArgs e)
         {
-            resultString = calculationTextBox.Text;
-            switch (operation)
+            try
             {
-                case 0:
-                    break;
-                case 1:
-                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('+')));
-                    break;
-                case 2:
-                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('-')));
-                    break;
-                case 3:
-                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('*')));
-                    break;
-                case 4:
-                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('/')));
-                    break;
+                resultString = calculationTextBox.Text;
+                switch (operation)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('+')));
+                        break;
+                    case 2:
+                        result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('-')));
+                        break;
+                    case 3:
+                        result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('*')));
+                        break;
+                    case 4:
+                        result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('/')));
+                        break;
+                }
+                //
+                if (secondSign == 1)
+                {
+                    result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('+'), resultString.Length - resultString.LastIndexOf('+')));
+                }
+                else if (secondSign == 2)
+                {
+                    result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('-'), resultString.Length - resultString.LastIndexOf('-')));
+                }
+                else if (operation == 1)
+                {
+                    result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('+'), resultString.Length - resultString.LastIndexOf('+')));
+                }
+                else if (operation == 2)
+                {
+                    result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('-'), resultString.Length - resultString.LastIndexOf('-')));
+                }
+                else if (operation == 3)
+                {
+                    result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('*') + 1, resultString.Length - resultString.LastIndexOf('*') - 1));
+                }
+                else if (operation == 4)
+                {
+                    result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('/') + 1, resultString.Length - resultString.LastIndexOf('/') - 1));
+                }
+                //
+                switch (operation)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        result[2] = result[0] + result[1];
+                        break;
+                    case 2:
+                        result[2] = result[0] - result[1];
+                        break;
+                    case 3:
+                        result[2] = result[0] * result[1];
+                        break;
+                    case 4:
+                        result[2] = result[0] / result[1];
+                        break;
+                }
+                //
+                resultsListBox.Items.Add(calculationTextBox.Text + "=" + Convert.ToString(result[2]));
+                calculationTextBox.Text = "";
+                firstSign = 0;
+                operation = 0;
+                secondSign = 0;
             }
-            //
-            if (secondSign == 1)
+            catch (Exception)
             {
-                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('+'), resultString.Length - resultString.LastIndexOf('+')));
+                resultsListBox.Items.Add(calculationTextBox.Text + "=Error!");
+                calculationTextBox.Text = "";
+                firstSign = 0;
+                operation = 0;
+                secondSign = 0;
             }
-            else if (secondSign == 2)
-            {
-                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('-'), resultString.Length - resultString.LastIndexOf('-')));
-            }
-            else if (operation == 1)
-            {
-                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('+'), resultString.Length - resultString.LastIndexOf('+')));
-            }
-            else if (operation == 2)
-            {
-                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('-'), resultString.Length - resultString.LastIndexOf('-')));
-            }
-            else if (operation == 3)
-            {
-                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('*') + 1, resultString.Length - resultString.LastIndexOf('*') - 1));
-            }
-            else if (operation == 4)
-            {
-                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('/') + 1, resultString.Length - resultString.LastIndexOf('/') - 1));
-            }
-            //
-            switch (operation)
-            {
-                case 0:
-                    break;
-                case 1:
-                    result[2] = result[0] + result[1];
-                    break;
-                case 2:
-                    result[2] = result[0] - result[1];
-                    break;
-                case 3:
-                    result[2] = result[0] * result[1];
-                    break;
-                case 4:
-                    result[2] = result[0] / result[1];
-                    break;
-            }
-            //
-            resultsListBox.Items.Add(calculationTextBox.Text + "=" + Convert.ToString(result[2]));
-            calculationTextBox.Text = "";
-            firstSign = 0;
-            operation = 0;
-            secondSign = 0;
         }
 
         private void multiplyButtonClick(object sender, EventArgs e)
