@@ -281,7 +281,6 @@
             this.calculationTextBox.Size = new System.Drawing.Size(177, 33);
             this.calculationTextBox.TabIndex = 0;
             this.calculationTextBox.TabStop = false;
-            this.calculationTextBox.TextChanged += new System.EventHandler(this.calculationTextBoxTextChanged);
             // 
             // resultsListBox
             // 

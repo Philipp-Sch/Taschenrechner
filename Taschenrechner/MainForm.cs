@@ -260,13 +260,6 @@ namespace Taschenrechner
             secondSign = 0;
         }
 
-        private void calculationTextBoxTextChanged(object sender, EventArgs e)
-        {
-            //resultsListBox.Items.Add(firstSign);
-            //resultsListBox.Items.Add(operation);
-            //resultsListBox.Items.Add(secondSign);
-        }
-
         private void multiplyButtonClick(object sender, EventArgs e)
         {
             if (operation == 0)
