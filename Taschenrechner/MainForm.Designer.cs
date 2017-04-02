@@ -46,7 +46,7 @@
             this.zeroButton = new System.Windows.Forms.Button();
             this.equalsButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.resultTextBox = new System.Windows.Forms.TextBox();
+            this.calculationTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // deleteButton
@@ -60,6 +60,7 @@
             this.deleteButton.TabStop = false;
             this.deleteButton.Text = "Del";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButtonClick);
             // 
             // allClearButton
             // 
@@ -96,6 +97,7 @@
             this.sevenButton.TabIndex = 7;
             this.sevenButton.Text = "7";
             this.sevenButton.UseVisualStyleBackColor = true;
+            this.sevenButton.Click += new System.EventHandler(this.sevenButtonClick);
             // 
             // eightButton
             // 
@@ -107,6 +109,7 @@
             this.eightButton.TabIndex = 8;
             this.eightButton.Text = "8";
             this.eightButton.UseVisualStyleBackColor = true;
+            this.eightButton.Click += new System.EventHandler(this.eightButtonClick);
             // 
             // nineButton
             // 
@@ -118,6 +121,7 @@
             this.nineButton.TabIndex = 9;
             this.nineButton.Text = "9";
             this.nineButton.UseVisualStyleBackColor = true;
+            this.nineButton.Click += new System.EventHandler(this.nineButtonClick);
             // 
             // divideButton
             // 
@@ -129,6 +133,7 @@
             this.divideButton.TabIndex = 10;
             this.divideButton.Text = "/";
             this.divideButton.UseVisualStyleBackColor = true;
+            this.divideButton.Click += new System.EventHandler(this.divideButtonClick);
             // 
             // fourButton
             // 
@@ -140,6 +145,7 @@
             this.fourButton.TabIndex = 4;
             this.fourButton.Text = "4";
             this.fourButton.UseVisualStyleBackColor = true;
+            this.fourButton.Click += new System.EventHandler(this.fourButtonClick);
             // 
             // fiveButton
             // 
@@ -151,6 +157,7 @@
             this.fiveButton.TabIndex = 5;
             this.fiveButton.Text = "5";
             this.fiveButton.UseVisualStyleBackColor = true;
+            this.fiveButton.Click += new System.EventHandler(this.fiveButtonClick);
             // 
             // sixButton
             // 
@@ -162,6 +169,7 @@
             this.sixButton.TabIndex = 6;
             this.sixButton.Text = "6";
             this.sixButton.UseVisualStyleBackColor = true;
+            this.sixButton.Click += new System.EventHandler(this.sixButtonClick);
             // 
             // multiplyButton
             // 
@@ -173,6 +181,7 @@
             this.multiplyButton.TabIndex = 11;
             this.multiplyButton.Text = "*";
             this.multiplyButton.UseVisualStyleBackColor = true;
+            this.multiplyButton.Click += new System.EventHandler(this.multiplyButtonClick);
             // 
             // oneButton
             // 
@@ -184,6 +193,7 @@
             this.oneButton.TabIndex = 1;
             this.oneButton.Text = "1";
             this.oneButton.UseVisualStyleBackColor = true;
+            this.oneButton.Click += new System.EventHandler(this.oneButtonClick);
             // 
             // twoButton
             // 
@@ -195,6 +205,7 @@
             this.twoButton.TabIndex = 2;
             this.twoButton.Text = "2";
             this.twoButton.UseVisualStyleBackColor = true;
+            this.twoButton.Click += new System.EventHandler(this.twoButtonClick);
             // 
             // threeButton
             // 
@@ -206,6 +217,7 @@
             this.threeButton.TabIndex = 3;
             this.threeButton.Text = "3";
             this.threeButton.UseVisualStyleBackColor = true;
+            this.threeButton.Click += new System.EventHandler(this.threeButtonClick);
             // 
             // subtractButton
             // 
@@ -217,6 +229,7 @@
             this.subtractButton.TabIndex = 12;
             this.subtractButton.Text = "-";
             this.subtractButton.UseVisualStyleBackColor = true;
+            this.subtractButton.Click += new System.EventHandler(this.subtractButtonClick);
             // 
             // zeroButton
             // 
@@ -228,6 +241,7 @@
             this.zeroButton.TabIndex = 0;
             this.zeroButton.Text = "0";
             this.zeroButton.UseVisualStyleBackColor = true;
+            this.zeroButton.Click += new System.EventHandler(this.zeroButtonClick);
             // 
             // equalsButton
             // 
@@ -250,19 +264,21 @@
             this.addButton.TabIndex = 13;
             this.addButton.Text = "+";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButtonClick);
             // 
-            // resultTextBox
+            // calculationTextBox
             // 
-            this.resultTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.resultTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultTextBox.ForeColor = System.Drawing.Color.White;
-            this.resultTextBox.Location = new System.Drawing.Point(12, 12);
-            this.resultTextBox.Name = "resultTextBox";
-            this.resultTextBox.ReadOnly = true;
-            this.resultTextBox.Size = new System.Drawing.Size(177, 33);
-            this.resultTextBox.TabIndex = 0;
-            this.resultTextBox.TabStop = false;
+            this.calculationTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.calculationTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.calculationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculationTextBox.ForeColor = System.Drawing.Color.White;
+            this.calculationTextBox.Location = new System.Drawing.Point(12, 12);
+            this.calculationTextBox.Name = "calculationTextBox";
+            this.calculationTextBox.ReadOnly = true;
+            this.calculationTextBox.Size = new System.Drawing.Size(177, 33);
+            this.calculationTextBox.TabIndex = 0;
+            this.calculationTextBox.TabStop = false;
+            this.calculationTextBox.TextChanged += new System.EventHandler(this.calculationTextBoxTextChanged);
             // 
             // MainForm
             // 
@@ -271,7 +287,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(201, 248);
             this.ControlBox = false;
-            this.Controls.Add(this.resultTextBox);
+            this.Controls.Add(this.calculationTextBox);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.equalsButton);
             this.Controls.Add(this.zeroButton);
@@ -320,7 +336,7 @@
         private System.Windows.Forms.Button zeroButton;
         private System.Windows.Forms.Button equalsButton;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.TextBox resultTextBox;
+        private System.Windows.Forms.TextBox calculationTextBox;
     }
 }
 

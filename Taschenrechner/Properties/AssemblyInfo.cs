@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Taschenrechner")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Anton Pagel & Philipp Schiffbauer")]
 [assembly: AssemblyProduct("Taschenrechner")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017, Pagel & Schiffbauer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
