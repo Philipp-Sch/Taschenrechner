@@ -1,2 +1,2 @@
 # Taschenrechner
-Voll funktionaler Taschenrechner
+Voll funktionaler Taschenrechner.
