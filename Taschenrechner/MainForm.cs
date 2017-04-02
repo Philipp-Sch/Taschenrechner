@@ -13,7 +13,8 @@ namespace Taschenrechner
     public partial class MainForm : Form
     {
         private int operation, firstSign, secondSign;
-        private List<double> result;
+        private string resultString;
+        private double[] result;
 
         public MainForm()
         {
@@ -23,7 +24,8 @@ namespace Taschenrechner
             firstSign = 0;
             secondSign = 0;
             //
-            result = new List<double>();
+            resultString = "";
+            result = new double[3];
         }
 
         private void offButtonClick(object sender, EventArgs e)
@@ -189,14 +191,80 @@ namespace Taschenrechner
 
         private void equalsButtonClick(object sender, EventArgs e)
         {
-            
+            resultString = calculationTextBox.Text;
+            switch (operation)
+            {
+                case 0:
+                    break;
+                case 1:
+                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('+')));
+                    break;
+                case 2:
+                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('-')));
+                    break;
+                case 3:
+                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('*')));
+                    break;
+                case 4:
+                    result[0] = Convert.ToDouble(resultString.Substring(0, resultString.IndexOf('/')));
+                    break;
+            }
+            //
+            if (secondSign == 1)
+            {
+                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('+'), resultString.Length - resultString.LastIndexOf('+')));
+            }
+            else if (secondSign == 2)
+            {
+                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('-'), resultString.Length - resultString.LastIndexOf('-')));
+            }
+            else if (operation == 1)
+            {
+                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('+'), resultString.Length - resultString.LastIndexOf('+')));
+            }
+            else if (operation == 2)
+            {
+                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('-'), resultString.Length - resultString.LastIndexOf('-')));
+            }
+            else if (operation == 3)
+            {
+                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('*') + 1, resultString.Length - resultString.LastIndexOf('*') - 1));
+            }
+            else if (operation == 4)
+            {
+                result[1] = Convert.ToDouble(resultString.Substring(resultString.LastIndexOf('/') + 1, resultString.Length - resultString.LastIndexOf('/') - 1));
+            }
+            //
+            switch (operation)
+            {
+                case 0:
+                    break;
+                case 1:
+                    result[2] = result[0] + result[1];
+                    break;
+                case 2:
+                    result[2] = result[0] - result[1];
+                    break;
+                case 3:
+                    result[2] = result[0] * result[1];
+                    break;
+                case 4:
+                    result[2] = result[0] / result[1];
+                    break;
+            }
+            //
+            resultsListBox.Items.Add(calculationTextBox.Text + "=" + Convert.ToString(result[2]));
+            calculationTextBox.Text = "";
+            firstSign = 0;
+            operation = 0;
+            secondSign = 0;
         }
 
         private void calculationTextBoxTextChanged(object sender, EventArgs e)
         {
-            resultsListBox.Items.Add(firstSign);
-            resultsListBox.Items.Add(operation);
-            resultsListBox.Items.Add(secondSign);
+            //resultsListBox.Items.Add(firstSign);
+            //resultsListBox.Items.Add(operation);
+            //resultsListBox.Items.Add(secondSign);
         }
 
         private void multiplyButtonClick(object sender, EventArgs e)
